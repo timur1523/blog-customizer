@@ -5,10 +5,14 @@ import plane from 'src/images/plane.png';
 import { Text } from 'src/ui/text';
 
 import styles from './Article.module.scss';
+interface ArticleProps {
+	setIsOpen: (isOpen: boolean) => void;
+}
 
-export const Article = () => {
+export const Article = (props: ArticleProps) => {
+	const { setIsOpen } = props;
 	return (
-		<article className={clsx(styles.article)}>
+		<article className={clsx(styles.article)} onClick={() => setIsOpen(false)}>
 			<Text as='h1' size={45} weight={800} uppercase dynamicLite>
 				Портрет Западной Швейцарии
 			</Text>
