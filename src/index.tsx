@@ -14,19 +14,25 @@ const root = createRoot(domNode);
 
 const App = () => {
 	const [isOpen, setIsOpen] = useState(false);
+	const [style, setStyle] = useState(defaultArticleState);
 	return (
 		<main
 			className={clsx(styles.main)}
 			style={
 				{
-					'--font-family': defaultArticleState.fontFamilyOption.value,
-					'--font-size': defaultArticleState.fontSizeOption.value,
-					'--font-color': defaultArticleState.fontColor.value,
-					'--container-width': defaultArticleState.contentWidth.value,
-					'--bg-color': defaultArticleState.backgroundColor.value,
+					'--font-family': style.fontFamilyOption.value,
+					'--font-size': style.fontSizeOption.value,
+					'--font-color': style.fontColor.value,
+					'--container-width': style.contentWidth.value,
+					'--bg-color': style.backgroundColor.value,
 				} as CSSProperties
 			}>
-			<ArticleParamsForm isOpen={isOpen} setIsOpen={setIsOpen} />
+			<ArticleParamsForm
+				isOpen={isOpen}
+				setIsOpen={setIsOpen}
+				style={style}
+				setStyle={setStyle}
+			/>
 			<Article setIsOpen={setIsOpen} />
 		</main>
 	);
