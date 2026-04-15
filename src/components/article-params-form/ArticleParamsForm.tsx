@@ -33,6 +33,7 @@ export const ArticleParamsForm = (props: ArticleParamsFormProps) => {
 	const [fontColor, setFontColor] = useState(style.fontColor);
 	const [backgroundColor, setBackgroundColor] = useState(style.backgroundColor);
 	const [contentWidth, setContentWidth] = useState(style.contentWidth);
+
 	useEffect(() => {
 		setFontFamilyOption(style.fontFamilyOption);
 		setFontSizeOption(style.fontSizeOption);
